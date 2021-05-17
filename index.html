@@ -1,29 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>APC</title>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <style>
+        img {
+            width: 100%;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        p {
+            color: white;
+            font-weight: 200;
+            text-align: center;
+        }
+
+        .name {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        h1 {
+            color: white;
+            font-size: 50px;
+            text-align: center;
+            font-weight: 100;
+        }
+    </style>
+
 </head>
+
 <body>
-    
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">APC Eats</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#micuenta">Mi cuenta</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="salir">Salir</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#ingresarmodal">Ingresar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#registrarmodal">Registro</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <!-- Modal ingresar-->
+    <div class="modal fade" id="ingresarmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ingresar</h5>
+                    
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="formaingresar">
+                        <div class="row">
+                            <div class="col-12 m-2">
+                                <input type="email" id="correo" required class="form-control"
+                                    placeholder="Ingresa tu correo">
+                            </div>
+                            <div class="col-12 m-2">
+                                <input type="password" id="contrasena" required class="form-control"
+                                    placeholder="Ingresa tu contraseña">
+                            </div>
+                            <div class="col-12 text-center">
+                                <button class="btn btn-primary">Ingresar</button>
+                                <p class="error text-danger"></p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal registrar-->
+    <div class="modal fade" id="registrarmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Registrar</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="formaregistrar">
+                        <div class="row">
+                            <div class="col-12 m-2">
+                                <input type="email" id="rcorreo" required class="form-control"
+                                    placeholder="Ingresa tu correo">
+                            </div>
+                            <div class="col-12 m-2">
+                                <input type="password" id="rcontrasena" required class="form-control"
+                                    placeholder="Ingresa tu contraseña">
+                            </div>
+                            <div class="col-12 text-center">
+                                <button class="btn btn-primary">Registrarse</button>
+                                <p class="error text-danger"></p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal mi cuenta-->
+    <div class="modal fade" id="micuenta" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Mi cuenta</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h1>Mi cuenta</h1>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <h1 class="mb-3">Lista de Platillos</h1>
+        <p>Usuario: correo@hotmail.com   Contraseña: 123456</p>
+        <div class="row text-center" id="listadeplatillos">
+            <div class="col-12 col-md-4">
+                <img src="imagenes/pizza.jpg" alt="Pizza">
+                <p class="name mt-3">Pizza de Pepperoni</p>
+                <p>$120</p>
+            </div>
+            <div class="col-12 col-md-4">
+                <img src="imagenes/tacos.jpg" alt="Tacos">
+                <p class="name mt-3">Tacos</p>
+                <p>$89</p>
+            </div>
+            <div class="col-12 col-md-4">
+                <img src="imagenes/sushi.jpg" alt="Sushi">
+                <p class="name mt-3">Sushi</p>
+                <p>$100</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBxPmQHvBfe9bo7HAj85tywiLsd8i_v1ys",
+            authDomain: "autorizacion-a0566.firebaseapp.com",
+            projectId: "autorizacion-a0566",
+            storageBucket: "autorizacion-a0566.appspot.com",
+            messagingSenderId: "984035048623",
+            appId: "1:984035048623:web:0b28b4bb328f58f3b8e85a"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+
+    </script>
+
+    <script src="scripts/autorizacion.js"></script>
+    <script src="scripts/index.js"></script>
+
 </body>
 
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
-
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyBxPmQHvBfe9bo7HAj85tywiLsd8i_v1ys",
-    authDomain: "autorizacion-a0566.firebaseapp.com",
-    projectId: "autorizacion-a0566",
-    storageBucket: "autorizacion-a0566.appspot.com",
-    messagingSenderId: "984035048623",
-    appId: "1:984035048623:web:0b28b4bb328f58f3b8e85a"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-</script>
 </html>
