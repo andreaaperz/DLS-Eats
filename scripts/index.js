@@ -36,7 +36,7 @@ const obtienePlatillos = (data) => {
             <div class="col-12 col-md-4">
                 <img src="imagenes/${platillo.imagen}" alt="${ platillo.imagen}">
                 <p class="name mt-3">${ platillo.nombre }</p>
-                <p> $ ${ platillo.precio }</p>
+                <p class="juan"> $ ${ platillo.precio }</p>
                 <a href="https://www.paypal.me/grupohernandezalba/${ platillo.precio }" target="_blank">
                     <button class="btn btn-primary">Pagar Ahora</button>
                 </a>
@@ -48,6 +48,6 @@ const obtienePlatillos = (data) => {
 
         listadeplatillos.innerHTML = html;
     } else {
-        listadeplatillos.innerHTML = '<p class = "text-center"> Ingrese con sus claves para ver los platillos disponibles </p>';
+        listadeplatillos.innerHTML = '<p class = "text-center juan"> Ingrese con sus claves para ver los platillos disponibles </p>';
     }
 }

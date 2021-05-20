@@ -1,7 +1,7 @@
 auth.onAuthStateChanged(user => {
     console.log(user);
     if (user) {
-        db.collection('platillos').onSnapshot( snapshot =>{
+        db.collection('platillos').onSnapshot(snapshot => {
             obtienePlatillos(snapshot.docs);
         });
 
@@ -80,10 +80,10 @@ formaregistrate.addEventListener('submit', (e) => {
     });
 });
 
-entrarGoogle = () =>{
+entrarGoogle = () => {
     var provider = new firebase.auth.GoogleAuthProvider();
 
-    firebase.auth().signInWithPopup(provider).then(function(result){
+    firebase.auth().signInWithPopup(provider).then(function (result) {
         var token = result.credential.accessToken;
 
         console.log(token);
@@ -92,8 +92,8 @@ entrarGoogle = () =>{
 
         let html = `
         
-        <p> Nombre: ${user.displayName} </p>
-        <p> Email: ${user.email} </p>
+        <p style="color:black"> Nombre: ${user.displayName} </p>
+        <p style="color:black"> Email: ${user.email} </p>
         <img src="${user.photoURL}">
         `;
 
@@ -103,7 +103,7 @@ entrarGoogle = () =>{
         formaingresar.reset();
         formaingresar.querySelector('.error').innerHTML = '';
 
-        }).catch(function(error){
-            console.log(error);
-        })
+    }).catch(function (error) {
+        console.log(error);
+    })
 }

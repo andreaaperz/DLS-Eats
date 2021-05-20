@@ -29,13 +29,14 @@
             background-color: black;
         }
 
-        p {
+        .juan {
             color: white;
             font-weight: 200;
             text-align: center;
         }
 
         .name {
+            color: white;
             font-size: 20px;
             font-weight: 600;
         }
@@ -47,7 +48,8 @@
             font-weight: 100;
         }
 
-        .logged-in, .logged-out{
+        .logged-in,
+        .logged-out {
             display: none;
         }
     </style>
@@ -72,10 +74,12 @@
                     <a class="nav-link logged-in" href="#" id="salir">Salir</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link logged-out" href="#" data-toggle="modal" data-target="#ingresarmodal">Ingresar</a>
+                    <a class="nav-link logged-out" href="#" data-toggle="modal"
+                        data-target="#ingresarmodal">Ingresar</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link logged-out" href="#" data-toggle="modal" data-target="#registrarmodal">Registro</a>
+                    <a class="nav-link logged-out" href="#" data-toggle="modal"
+                        data-target="#registrarmodal">Registro</a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
@@ -92,7 +96,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Ingresar</h5>
-                    
+
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -199,10 +203,10 @@
     <div class="container my-5">
         <h1 class="mb-3">Lista de Platillos</h1>
         <div class="row text-center" id="listadeplatillos">
-            
-            </div>
 
         </div>
+
+    </div>
     </div>
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
